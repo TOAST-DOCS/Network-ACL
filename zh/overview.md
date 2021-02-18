@@ -1,6 +1,6 @@
 ## Network > Network ACL > 개요
 
-TOAST는 Network ACL 기능을 제공합니다.
+NHN Cloud는 Network ACL 기능을 제공합니다.
 이를 이용하면,
 - protocol, ip, port 별로 접근 제어가 가능해집니다.
 
