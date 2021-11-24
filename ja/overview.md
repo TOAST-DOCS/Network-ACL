@@ -1,8 +1,7 @@
 ## Network > Network ACL > 概要
 
 NHN CloudはNetwork ACL機能を提供します。
-これを利用すると
-- protocol、ip、portごとにアクセス制御が可能になります。
+これを利用すると protocol、ip、portごとにアクセス制御が可能になります。
 
 
 ## ACL機能
@@ -45,7 +44,7 @@ Network ACL機能を利用するには、次の事項を設定する必要があ
 * 1つのNetworkには1つのACLを適用できます。
 
 > [参考]
->* NetworkとACL動作
+> ### NetworkとACL動作
 > * Networkを削除するとACL bindingが削除されます。ACLは削除されません。
 > * ACLにbindingされたnetworkがある場合、ACLを削除できません。
 > * ACL ruleを追加または削除すると、bindingされたすべてのnetworkにその内容が反映されます。
