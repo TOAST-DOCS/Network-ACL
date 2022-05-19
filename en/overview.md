@@ -33,7 +33,7 @@ To use the network ACL function, you need to configure the following.
 * Their order number determines their priority. Lower number has higher priority.
 * 'Allow': **Allows** access that matches the rule.
 * 'Deny': **Denies** access that matches the rule.
-* An access control target can have an IP address or an IP address range in CIDR format. If you enter an IP address range in CIDR format, the entered range in the network is included as the target of access control.
+* An access control target can have an IP address or an IP address range in CIDR format. If you enter an IP address range in CIDR format, the entered CIDR block in the network is included in the target of access control.
 * If you specify a protocol, the rule can have one port or a range of ports.
 * For source and destination, the rules must always be set as a pair.
 
