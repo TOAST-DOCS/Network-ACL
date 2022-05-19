@@ -1,4 +1,4 @@
-## Network > Network ACLs > Console User Guide
+## Network > Network ACL > Console User Guide
 
 ## ACL
 For details on the ACL function, refer to the [Network ACL](/Network/Network%20ACL/en/overview/) document.
