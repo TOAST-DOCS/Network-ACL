@@ -2,6 +2,7 @@
 
 NHN Cloud provides the network access control list (ACL) function.
 This function allows you to control access per protocol, IP address, and port.
+This service is currently only available in the Korea  (Pyeongchon) region, and will be supported by other regions gradually.
 
 
 ## ACL Function
