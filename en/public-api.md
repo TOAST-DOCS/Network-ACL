@@ -1,22 +1,25 @@
 ## Network > Network ACL > API v2 가이드
 
-API를 사용하려면 API 엔드포인트와 토큰 등이 필요합니다. [API 사용 준비](/Compute/Compute/ko/identity-api/)를 참고하여 API 사용에 필요한 정보를 준비합니다.
+API를 사용하려면 API 엔드포인트와 토큰 등이 필요합니다. [API 사용 준비](/Compute/Compute/ko/identity-api-gov/)를 참고하여 API 사용에 필요한 정보를 준비합니다.
 
-Network ACL API는 `network` 타입 엔드포인트를 이용합니다. 정확한 엔드포인트는 토큰 발급 응답의 `serviceCatalog`를 참조합니다.
+보안 그룹 API는 `network` 타입 엔드포인트를 이용합니다. 정확한 엔드포인트는 토큰 발급 응답의 `serviceCatalog`를 참조합니다.
 
 | 타입 | 리전 | 엔드포인트 |
 |---|---|---|
-| network | 한국(판교) 리전<br>한국(평촌) 리전<br>일본 리전 | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com<br>https://jp1-api-network-infrastructure.nhncloudservice.com |
+| network | 한국(평촌) 리전 | https://kr2-api-network-infrastructure.nhncloudservice.com |
 
 API 응답에 가이드에 명시되지 않은 필드가 나타날 수 있습니다. 이런 필드는 NHN Cloud 내부 용도로 사용되며 사전 공지 없이 변경될 수 있으므로 사용하지 않습니다.
 
-## ACL 목록 보기
+
+
+## Network ACL
+### ACL 목록 보기
 ```
 GET /v2.0/acls
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -29,7 +32,7 @@ X-Auth-Token: {tokenId}
 | sort_key | Query | String | - | 조회할 ACL의 정렬 키<br>`sort_dir`에서 지정한 방향대로 정렬 |
 | fields | Query | String | - | 조회할 ACL의 필드 이름<br>예) `fields=id&fields=name` |
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 | 설명 |
 |---|---|---|---|
@@ -38,7 +41,6 @@ X-Auth-Token: {tokenId}
 | acls.tenant_id | Body | String | 테넌트 ID |
 | acls.description | Body | String | ACL 설명 |
 | acls.name | Body | String | ACL 이름 |
-| acls.revision_number | Query | String | ACL 개정 번호 |
 | acls.create_at | Query | String | ACL 생성시간 |
 | acls.update_at | Query | String | ACL 갱신시간 |
 
@@ -72,14 +74,16 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL 보기
+---
+
+### ACL 보기
 
 ```
 GET /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -89,7 +93,7 @@ X-Auth-Token: {tokenId}
 | aclId | Query | UUID | O | 조회할 ACL ID |
 | fields | Query | String | - | 조회할 ACL의 필드 이름<br>예) `fields=id&fields=name` |
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 | 설명 |
 |---|---|---|---|
@@ -98,7 +102,6 @@ X-Auth-Token: {tokenId}
 | acl.tenant_id | Body | String | 테넌트 ID |
 | acl.description | Body | String | ACL 설명 |
 | acl.name | Body | String | ACL 이름 |
-| acl.revision_number | Query | String | ACL 개정 번호 |
 | acl.create_at | Query | String | ACL 생성시간 |
 | acl.update_at | Query | String | ACL 갱신시간 |
 
@@ -122,14 +125,16 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL 생성
+---
+
+### ACL 생성
  
 ```
 POST /v2.0/acls/
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
@@ -154,7 +159,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 |  설명 |
 |---|---|---|---|
@@ -163,7 +168,6 @@ X-Auth-Token: {tokenId}
 | acl.tenant_id | Body | String | 테넌트 ID |
 | acl.name | Query | String | ACL 이름 |
 | acl.description | Query | String | ACL 설명 |
-| acl.revision_number | Query | String | ACL 개정 번호 |
 | acl.create_at | Query | String | ACL 생성시간 |
 | acl.update_at | Query | String | ACL 갱신시간 |
 
@@ -187,25 +191,29 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL 삭제
+---
+
+### ACL 삭제
 
 ```
 DELETE /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | aclId | Query | UUID | O | 삭제할 ACL ID |
 | tokenId | Header | String | O | 토큰 ID |
 
-### 응답
+#### 응답
 
 이 API는 응답 본문을 반환하지 않습니다.
 
-## ACL 수정
+---
+
+### ACL 수정
 기존 ACL을 수정합니다. (이름과 설명만 수정 가능 합니다)
 
 ```
@@ -213,11 +221,12 @@ PUT /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
+| aclId | Header | String | O | ACL ID |
 | name | Query | String | - | ACL 이름 |
 | description | Query | String | - | ACL 설명 |
 
@@ -236,7 +245,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 |  설명 |
 |---|---|---|---|
@@ -245,7 +254,6 @@ X-Auth-Token: {tokenId}
 | acl.tenant_id | Body | String | 테넌트 ID |
 | acl.name | Query | String | ACL 이름 |
 | acl.description | Query | String | ACL 설명 |
-| acl.revision_number | Query | String | ACL 개정 번호 |
 | acl.create_at | Query | String | ACL 생성시간 |
 | acl.update_at | Query | String | ACL 갱신시간 |
 
@@ -270,14 +278,16 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL Rule 목록 보기
+---
+
+### ACL Rule 목록 보기
  
 ```
 GET /v2.0/acl_rules/
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -290,30 +300,28 @@ X-Auth-Token: {tokenId}
 | sort_key | Query | String | - | 조회할 ACL Rule의 정렬 키<br>`sort_dir`에서 지정한 방향대로 정렬 |
 | fields | Query | String | - | 조회할 ACL Rule의 필드 이름<br>예) `fields=id&fields=name` |
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 |  설명 |
 |---|---|---|---|
-| acl_rules | Body | Array | ACL Rule 목록 객체 |
-| acl_rules.id | Body | String | ACL Rule ID |
-| acl_rules.tenant_id | Body | String | 테넌트 ID |
-| acl_rules.name | Query | String | ACL Rule 이름 |
-| acl_rules.description | Query | String | ACL Rule 설명 |
-| acl_rules.revision_number | Query | String | ACL Rule 개정 번호 |
-| acl_rules.create_at | Query | String | ACL Rule 생성시간 |
-| acl_rules.update_at | Query | String | ACL Rule 갱신시간 |
-| acl_rules.acl_id | Body | String | ACL ID |
-| acl_rules.remote_group_id | Body | String | 원격 그룹 id (미사용) |
-| acl_rules.protocol | Body | String | protocol (tcp,udp,icmp) |
-| acl_rules.ethertype | Body | String | IPv4로 고정 |
-| acl_rules.src_port_range_min | Body | String | src 포트 범위의 최소값 |
-| acl_rules.src_port_range_max | Body | String | src 포트 범위의 최대값 |
-| acl_rules.src_ip | Body | String | src ip |
-| acl_rules.dst_ip | Body | String | dst ip |
-| acl_rules.dst_port_range_max | Body | String | dst 포트 범위의 최소값 |
-| acl_rules.dst_port_range_min | Body | String | dst 포트 범위의 최대값 |
-| acl_rules.policy | Body | String | allow or deny  |
-| acl_rules.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rules | Body | Array | ACL Rule 목록 객체 |
+| acl\_rules.id | Body | String | ACL Rule ID |
+| acl\_rules.tenant_id | Body | String | 테넌트 ID |
+| acl\_rules.name | Query | String | ACL Rule 이름 |
+| acl\_rules.description | Query | String | ACL Rule 설명 |
+| acl\_rules.create_at | Query | String | ACL Rule 생성시간 |
+| acl\_rules.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rules.acl_id | Body | String | ACL ID |
+| acl\_rules.protocol | Body | String | protocol (tcp,udp,icmp) |
+| acl\_rules.ethertype | Body | String | IPv4로 고정 |
+| acl\_rules.src\_port\_range\_min | Body | String | src 포트 범위의 최소값 |
+| acl\_rules.src\_port\_range\_max | Body | String | src 포트 범위의 최대값 |
+| acl\_rules.src_ip | Body | String | src ip |
+| acl\_rules.dst_ip | Body | String | dst ip |
+| acl\_rules.dst\_port\_range\_max | Body | String | dst 포트 범위의 최소값 |
+| acl\_rules.dst\_port\_range\_min | Body | String | dst 포트 범위의 최대값 |
+| acl\_rules.policy | Body | String | allow or deny  |
+| acl\_rules.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
 
 <details><summary>예시</summary>
 <p>
@@ -329,14 +337,16 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL Rule 보기
+---
+
+### ACL Rule 보기
 
 ```
 GET /v2.0/acl_rules/{aclRuleId}
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -346,30 +356,28 @@ X-Auth-Token: {tokenId}
 | aclRuleId | Query | UUID | O | 조회할 ACL Rule ID |
 | fields | Query | String | - | 조회할 ACL Rule의 필드 이름<br>예) `fields=id&fields=name` |
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 | 설명 |
 |---|---|---|---|
-| acl_rule | Body | Array | ACL Rule 목록 객체 |
-| acl_rule.id | Body | String | ACL Rule ID |
-| acl_rule.tenant_id | Body | String | 테넌트 ID |
-| acl_rule.name | Query | String | ACL Rule 이름 |
-| acl_rule.description | Query | String | ACL Rule 설명 |
-| acl_rule.revision_number | Query | String | ACL Rule 개정 번호 |
-| acl_rule.create_at | Query | String | ACL Rule 생성시간 |
-| acl_rule.update_at | Query | String | ACL Rule 갱신시간 |
-| acl_rule.acl_id | Body | String | ACL ID |
-| acl_rule.remote_group_id | Body | String | 원격 그룹 id (미사용) |
-| acl_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
-| acl_rule.ethertype | Body | String | IPv4로 고정 |
-| acl_rule.src_port_range_min | Body | String | src 포트 범위의 최소값 |
-| acl_rule.src_port_range_max | Body | String | src 포트 범위의 최대값 |
-| acl_rule.src_ip | Body | String | src ip |
-| acl_rule.dst_ip | Body | String | dst ip |
-| acl_rule.dst_port_range_max | Body | String | dst 포트 범위의 최소값 |
-| acl_rule.dst_port_range_min | Body | String | dst 포트 범위의 최대값 |
-| acl_rule.policy | Body | String | allow or deny  |
-| acl_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule | Body | Array | ACL Rule 목록 객체 |
+| acl\_rule.id | Body | String | ACL Rule ID |
+| acl\_rule.tenant_id | Body | String | 테넌트 ID |
+| acl\_rule.name | Query | String | ACL Rule 이름 |
+| acl\_rule.description | Query | String | ACL Rule 설명 |
+| acl\_rule.create_at | Query | String | ACL Rule 생성시간 |
+| acl\_rule.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rule.acl_id | Body | String | ACL ID |
+| acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
+| acl\_rule.ethertype | Body | String | IPv4로 고정 |
+| acl\_rule.src\_port\_range\_min | Body | String | src 포트 범위의 최소값 |
+| acl\_rule.src\_port\_range\_max | Body | String | src 포트 범위의 최대값 |
+| acl\_rule.src_ip | Body | String | src ip |
+| acl\_rule.dst_ip | Body | String | dst ip |
+| acl\_rule.dst\_port\_range\_max | Body | String | dst 포트 범위의 최소값 |
+| acl\_rule.dst\_port\_range\_min | Body | String | dst 포트 범위의 최대값 |
+| acl\_rule.policy | Body | String | allow or deny  |
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
 
 
 <details><summary>예시</summary>
@@ -384,14 +392,16 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL Rule 생성
+---
+
+### ACL Rule 생성
 
 ```
 POST /v2.0/acl_rules/
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 | 이름 | 종류 | 형식 |  필수 |설명 |
 |---|---|---|---|---|
@@ -402,40 +412,38 @@ X-Auth-Token: {tokenId}
 | acl_id | Body | String | O |ACL ID |
 | protocol | Body | String | -| protocol (tcp,udp,icmp) |
 | ethertype | Body | String | -|IPv4로 고정 |
-| src_port_range_min | Body | String | -|src 포트 범위의 최소값 |
-| src_port_range_max | Body | String | -|src 포트 범위의 최대값 |
+| src\_port\_range\_min | Body | String | -|src 포트 범위의 최소값 |
+| src\_port\_range\_max | Body | String | -|src 포트 범위의 최대값 |
 | src_ip | Body | String | O|src ip |
 | dst_ip | Body | String | O|dst ip |
-| dst_port_range_max | Body | String | -|dst 포트 범위의 최소값 |
-| dst_port_range_min | Body | String | -|dst 포트 범위의 최대값 |
+| dst\_port\_range\_max | Body | String | -|dst 포트 범위의 최소값 |
+| dst\_port\_range\_min | Body | String | -|dst 포트 범위의 최대값 |
 | policy | Body | String | O| allow or deny  |
 | order | Body | Integer | O | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
 
-### 응답
+#### 응답
 
  
 | 이름 | 종류 | 형식 | 설명 |
 |---|---|---|---|
-| acl_rule | Body | Array | ACL Rule 목록 객체 |
-| acl_rule.id | Body | String | ACL Rule ID |
-| acl_rule.tenant_id | Body | String | 테넌트 ID |
-| acl_rule.name | Query | String | ACL Rule 이름 |
-| acl_rule.description | Query | String | ACL Rule 설명 |
-| acl_rule.revision_number | Query | String | ACL Rule 개정 번호 |
-| acl_rule.create_at | Query | String | ACL Rule 생성시간 |
-| acl_rule.update_at | Query | String | ACL Rule 갱신시간 |
-| acl_rule.acl_id | Body | String | ACL ID |
-| acl_rule.remote_group_id | Body | String | 원격 그룹 id (미사용) |
-| acl_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
-| acl_rule.ethertype | Body | String | IPv4로 고정 |
-| acl_rule.src_port_range_min | Body | String | src 포트 범위의 최소값 |
-| acl_rule.src_port_range_max | Body | String | src 포트 범위의 최대값 |
-| acl_rule.src_ip | Body | String | src ip |
-| acl_rule.dst_ip | Body | String | dst ip |
-| acl_rule.dst_port_range_max | Body | String | dst 포트 범위의 최소값 |
-| acl_rule.dst_port_range_min | Body | String | dst 포트 범위의 최대값 |
-| acl_rule.policy | Body | String | allow or deny  |
-| acl_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule | Body | Array | ACL Rule 목록 객체 |
+| acl\_rule.id | Body | String | ACL Rule ID |
+| acl\_rule.tenant_id | Body | String | 테넌트 ID |
+| acl\_rule.name | Query | String | ACL Rule 이름 |
+| acl\_rule.description | Query | String | ACL Rule 설명 |
+| acl\_rule.create_at | Query | String | ACL Rule 생성시간 |
+| acl\_rule.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rule.acl_id | Body | String | ACL ID |
+| acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
+| acl\_rule.ethertype | Body | String | IPv4로 고정 |
+| acl\_rule.src\_port\_range\_min | Body | String | src 포트 범위의 최소값 |
+| acl\_rule.src\_port\_range\_max | Body | String | src 포트 범위의 최대값 |
+| acl\_rule.src_ip | Body | String | src ip |
+| acl\_rule.dst_ip | Body | String | dst ip |
+| acl\_rule.dst\_port\_range\_max | Body | String | dst 포트 범위의 최소값 |
+| acl\_rule.dst\_port\_range\_min | Body | String | dst 포트 범위의 최대값 |
+| acl\_rule.policy | Body | String | allow or deny  |
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
 
 <details><summary>예시</summary>
 <p>
@@ -449,25 +457,29 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL Rule 삭제
+---
+
+### ACL Rule 삭제
 
 ```
 DELETE /v2.0/acl_rules/{aclRuleId}
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | aclRuleId | Query | UUID | O | 삭제할 ACL Rule ID |
 | tokenId | Header | String | O | 토큰 ID |
 
-### 응답
+#### 응답
 
 이 API는 응답 본문을 반환하지 않습니다.
 
-## ACL Rule 수정
+---
+
+### ACL Rule 수정
 
 기존 ACL Rule을 수정합니다. (이름과 설명만 수정 가능 합니다)
 
@@ -476,11 +488,12 @@ PUT /v2.0/acl_rules/{aclRuleId}
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
+| aclRuleId | Query | UUID | O | 삭제할 ACL Rule ID |
 | name | Query | String | - | ACL Rule 이름 |
 | description | Query | String | - | ACL Rule 설명 |
 
@@ -499,30 +512,28 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 |  설명 |
 |---|---|---|---|
-| acl_rule | Body | Array | ACL Rule 목록 객체 |
-| acl_rule.id | Body | String | ACL Rule ID |
-| acl_rule.tenant_id | Body | String | 테넌트 ID |
-| acl_rule.name | Query | String | ACL Rule 이름 |
-| acl_rule.description | Query | String | ACL Rule 설명 |
-| acl_rule.revision_number | Query | String | ACL Rule 개정 번호 |
-| acl_rule.create_at | Query | String | ACL Rule 생성시간 |
-| acl_rule.update_at | Query | String | ACL Rule 갱신시간 |
-| acl_rule.acl_id | Body | String | ACL ID |
-| acl_rule.remote_group_id | Body | String | 원격 그룹 id (미사용) |
-| acl_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
-| acl_rule.ethertype | Body | String | IPv4로 고정 |
-| acl_rule.src_port_range_min | Body | String | src 포트 범위의 최소값 |
-| acl_rule.src_port_range_max | Body | String | src 포트 범위의 최대값 |
-| acl_rule.src_ip | Body | String | src ip |
-| acl_rule.dst_ip | Body | String | dst ip |
-| acl_rule.dst_port_range_max | Body | String | dst 포트 범위의 최소값 |
-| acl_rule.dst_port_range_min | Body | String | dst 포트 범위의 최대값 |
-| acl_rule.policy | Body | String | allow or deny  |
-| acl_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule | Body | Array | ACL Rule 목록 객체 |
+| acl\_rule.id | Body | String | ACL Rule ID |
+| acl\_rule.tenant_id | Body | String | 테넌트 ID |
+| acl\_rule.name | Query | String | ACL Rule 이름 |
+| acl\_rule.description | Query | String | ACL Rule 설명 |
+| acl\_rule.create_at | Query | String | ACL Rule 생성시간 |
+| acl\_rule.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rule.acl_id | Body | String | ACL ID |
+| acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
+| acl\_rule.ethertype | Body | String | IPv4로 고정 |
+| acl\_rule.src\_port\_range\_min | Body | String | src 포트 범위의 최소값 |
+| acl\_rule.src\_port\_range\_max | Body | String | src 포트 범위의 최대값 |
+| acl\_rule.src_ip | Body | String | src ip |
+| acl\_rule.dst_ip | Body | String | dst ip |
+| acl\_rule.dst\_port\_range\_max | Body | String | dst 포트 범위의 최소값 |
+| acl\_rule.dst\_port\_range\_min | Body | String | dst 포트 범위의 최대값 |
+| acl\_rule.policy | Body | String | allow or deny  |
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
 
 
 <details><summary>예시</summary>
@@ -537,14 +548,16 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL 바인딩 목록 보기
+---
+
+### ACL 바인딩 목록 보기
 
 ```
 GET /v2.0/acl_bindings/
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -555,15 +568,15 @@ X-Auth-Token: {tokenId}
 | sort_key | Query | String | - | 조회할 ACL 바인딩의 정렬 키<br>`sort_dir`에서 지정한 방향대로 정렬 |
 | fields | Query | String | - | 조회할 ACL 바인딩의 필드 이름<br>예) `fields=id&fields=name` |
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 |  설명 |
 |---|---|---|---|
-| acl_bindings | Body | Array | ACL 바인딩 목록 객체 |
-| acl_bindings.id | Body | String | ACL 바인딩 ID |
-| acl_bindings.tenant_id | Body | String | 테넌트 ID |
-| acl_bindings.acl_id | Query | String | Network와 바인딩되는 ACL ID |
-| acl_bindings.network_id | Query | String | ACL과 바인딩되는 Network ID |
+| acl\_bindings | Body | Array | ACL 바인딩 목록 객체 |
+| acl\_bindings.id | Body | String | ACL 바인딩 ID |
+| acl\_bindings.tenant_id | Body | String | 테넌트 ID |
+| acl\_bindings.acl_id | Query | String | Network와 바인딩되는 ACL ID |
+| acl\_bindings.network_id | Query | String | ACL과 바인딩되는 Network ID |
 
 
 <details><summary>예시</summary>
@@ -590,14 +603,16 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL 바인딩 보기
+---
+
+### ACL 바인딩 보기
 
 ```
 GET /v2.0/acl_bindings/{aclBindingId}
 X-Auth-Token: {tokenId}
 ```
 
-### 요청
+#### 요청
 
 이 API는 요청 본문을 요구하지 않습니다.
 
@@ -607,15 +622,15 @@ X-Auth-Token: {tokenId}
 | aclBindingId | Query | UUID | O | 조회할 ACL 바인딩 ID |
 | fields | Query | String | - | 조회할 ACL 바인딩의 필드 이름<br>예) `fields=id&fields=name` |
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 |  설명 |
 |---|---|---|---|
-| acl_binding | Body | Array | ACL 바인딩 목록 객체 |
-| acl_binding.id | Body | String | ACL 바인딩 ID |
-| acl_binding.tenant_id | Body | String | 테넌트 ID |
-| acl_binding.acl_id | Query | String | Network와 바인딩되는 ACL ID |
-| acl_binding.network_id | Query | String | ACL과 바인딩되는 Network ID |
+| acl\_binding | Body | Array | ACL 바인딩 목록 객체 |
+| acl\_binding.id | Body | String | ACL 바인딩 ID |
+| acl\_binding.tenant_id | Body | String | 테넌트 ID |
+| acl\_binding.acl_id | Query | String | Network와 바인딩되는 ACL ID |
+| acl\_binding.network_id | Query | String | ACL과 바인딩되는 Network ID |
 
 
 <details><summary>예시</summary>
@@ -634,10 +649,12 @@ X-Auth-Token: {tokenId}
 ```
 </p>
 </details>
- 
-## ACL 바인딩 생성
 
-### 요청
+---
+ 
+### ACL 바인딩 생성
+
+#### 요청
 
 | 이름 | 종류 | 형식 |  필수 |설명 |
 |---|---|---|---|---|
@@ -663,15 +680,15 @@ X-Auth-Token: {tokenId}
 </details>
 
 
-### 응답
+#### 응답
 
 | 이름 | 종류 | 형식 |  설명 |
 |---|---|---|---|
-| acl_binding | Body | Array | ACL 바인딩 목록 객체 |
-| acl_binding.id | Body | String | ACL 바인딩 ID |
-| acl_binding.tenant_id | Body | String | 테넌트 ID |
-| acl_binding.acl_id | Query | String | Network와 바인딩되는 ACL ID |
-| acl_binding.network_id | Query | String | ACL과 바인딩되는 Network ID |
+| acl\_binding | Body | Array | ACL 바인딩 목록 객체 |
+| acl\_binding.id | Body | String | ACL 바인딩 ID |
+| acl\_binding.tenant_id | Body | String | 테넌트 ID |
+| acl\_binding.acl_id | Query | String | Network와 바인딩되는 ACL ID |
+| acl\_binding.network_id | Query | String | ACL과 바인딩되는 Network ID |
 
 <details><summary>예시</summary>
 <p>
@@ -690,7 +707,9 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
-## ACL 바인딩 삭제
+---
+
+### ACL 바인딩 삭제
 
 ```
 DELETE /v2.0/acl_bindings/{aclBindingId}
@@ -698,15 +717,13 @@ X-Auth-Token: {tokenId}
 ```
 
 
-### 요청
+#### 요청
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | aclBindingId | Query | UUID | O | 삭제할 ACL 바인딩 ID |
 | tokenId | Header | String | O | 토큰 ID |
 
-### 응답
+#### 응답
 
 이 API는 응답 본문을 반환하지 않습니다.
-
----
