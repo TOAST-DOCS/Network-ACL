@@ -137,9 +137,10 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| tenant_id | Body | String | O | 테넌트 ID |
-| name | Body | String | - | ACL 이름 |
-| description | Body | String | - | ACL 설명 |
+| acl | Body | Array | O | ACL 목록 객체 |
+| acl.tenant_id | Body | String | O | 테넌트 ID |
+| acl.name | Body | String | - | ACL 이름 |
+| acl.description | Body | String | - | ACL 설명 |
 
 <details><summary>예시</summary>
 <p>
@@ -225,8 +226,9 @@ X-Auth-Token: {tokenId}
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
 | aclId | URL | String | O | ACL ID |
-| name | Body | String | - | ACL 이름 |
-| description | Body | String | - | ACL 설명 |
+| acl | Body | Array | O | ACL 목록 객체 |
+| acl.name | Body | String | - | ACL 이름 |
+| acl.description | Body | String | - | ACL 설명 |
 
 <details><summary>예시</summary>
 <p>
@@ -402,20 +404,34 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 |  필수 |설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| tenant_id | Body | String | O | 테넌트 ID |
-| name | Body | String | - |ACL Rule 이름 |
-| description | Body | String | - |ACL Rule 설명 |
-| acl_id | Body | String | O |ACL ID |
-| protocol | Body | String | -| protocol (tcp,udp,icmp) |
-| ethertype | Body | String | -|IPv4로 고정 |
-| src\_port\_range\_min | Body | String | -|src 포트 범위의 최소값 |
-| src\_port\_range\_max | Body | String | -|src 포트 범위의 최대값 |
-| src_ip | Body | String | O|src ip |
-| dst_ip | Body | String | O|dst ip |
-| dst\_port\_range\_max | Body | String | -|dst 포트 범위의 최소값 |
-| dst\_port\_range\_min | Body | String | -|dst 포트 범위의 최대값 |
-| policy | Body | String | O| allow or deny  |
-| order | Body | Integer | O | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule | Body | Array | O | ACL 목록 객체 |
+| acl\_rule.tenant_id | Body | String | O | 테넌트 ID |
+| acl\_rule.name | Body | String | - |ACL Rule 이름 |
+| acl\_rule.description | Body | String | - |ACL Rule 설명 |
+| acl\_rule.acl_id | Body | String | O |ACL ID |
+| acl\_rule.protocol | Body | String | -| protocol (tcp,udp,icmp) |
+| acl\_rule.ethertype | Body | String | -|IPv4로 고정 |
+| acl\_rule.src\_port\_range\_min | Body | String | -|src 포트 범위의 최소값 |
+| acl\_rule.src\_port\_range\_max | Body | String | -|src 포트 범위의 최대값 |
+| acl\_rule.src_ip | Body | String | O|src ip |
+| acl\_rule.dst_ip | Body | String | O|dst ip |
+| acl\_rule.dst\_port\_range\_max | Body | String | -|dst 포트 범위의 최소값 |
+| acl\_rule.dst\_port\_range\_min | Body | String | -|dst 포트 범위의 최대값 |
+| acl\_rule.policy | Body | String | O| allow or deny  |
+| acl\_rule.order | Body | Integer | O | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+
+<details><summary>예시</summary>
+<p>
+
+```json
+{
+  "acl_rule": {"src_ip":"0.0.0.0/0", "tenant_id":"43b53d88b7a54d3aa5472bd800f1cbce",
+"policy":"deny","dst_ip":"192.168.0.0/24",
+"order":103,"acl_id":"5efaec75-8f07-4f5f-83b1-8b4c11c07e0b"}
+}
+```
+</p>
+</details>
 
 #### 응답
 
@@ -447,7 +463,7 @@ X-Auth-Token: {tokenId}
 ```json
 {
   "acl_rule": 
-    {"remote_group_id":null,"protocol":null,"description":"default deny rule","ethertype":"IPv4","created_at":"2022-12-16T06:58:54Z","src_port_range_max":null,"updated_at":"2022-12-16T06:58:54Z","id":"005a5644-4e43-47fc-b3d9-6c1befe12f7b","src_ip":"0.0.0.0/0","dst_port_range_min":null,"dst_port_range_max":null,"revision_number":0,"tenant_id":"43b53d88b7a54d3aa5472bd800f1cbce","policy":"deny","dst_ip":"0.0.0.0/0","project_id":"43b53d88b7a54d3aa5472bd800f1cbce","order":32765,"acl_id":"5efaec75-8f07-4f5f-83b1-8b4c11c07e0b","src_port_range_min":null}
+    {"remote_group_id":null,"protocol":null,"description":"","ethertype":"IPv4","created_at":"2022-12-16T06:58:54Z","src_port_range_max":null,"updated_at":"2022-12-16T06:58:54Z","id":"005a5644-4e43-47fc-b3d9-6c1befe12f7b","src_ip":"0.0.0.0/0","dst_port_range_min":null,"dst_port_range_max":null,"revision_number":0,"tenant_id":"43b53d88b7a54d3aa5472bd800f1cbce","policy":"deny","dst_ip":"192.168.0.0/24","project_id":"43b53d88b7a54d3aa5472bd800f1cbce","order":103,"acl_id":"5efaec75-8f07-4f5f-83b1-8b4c11c07e0b","src_port_range_min":null}
 }
 ```
 </p>
@@ -490,8 +506,9 @@ X-Auth-Token: {tokenId}
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
 | aclRuleId | URL | UUID | O | 삭제할 ACL Rule ID |
-| name | Body | String | - | ACL Rule 이름 |
-| description | Body | String | - | ACL Rule 설명 |
+| acl\_rule | Body | Array | O | ACL 목록 객체 |
+| acl\_rule.name | Body | String | - | ACL Rule 이름 |
+| acl\_rule.description | Body | String | - | ACL Rule 설명 |
 
 <details><summary>예시</summary>
 <p>
@@ -660,9 +677,10 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 |  필수 |설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| tenant_id | Body | String | O | 테넌트 ID |
-| network_id | Body | String | O | Network ID |
-| acl_id | Body | String | O |ACL ID |
+| acl\_binding | Body | Array | O | ACL 바인딩 목록 객체 |
+| acl\_binding.tenant_id | Body | String | O | 테넌트 ID |
+| acl\_binding.network_id | Body | String | O | Network ID |
+| acl\_binding.acl_id | Body | String | O |ACL ID |
 
 <details><summary>예시</summary>
 <p>
