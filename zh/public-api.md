@@ -128,7 +128,7 @@ X-Auth-Token: {tokenId}
 ### ACL 생성
  
 ```
-POST /v2.0/acls/
+POST /v2.0/acls
 X-Auth-Token: {tokenId}
 ```
 
@@ -393,7 +393,7 @@ X-Auth-Token: {tokenId}
 ### ACL Rule 생성
 
 ```
-POST /v2.0/acl_rules/
+POST /v2.0/acl_rules
 X-Auth-Token: {tokenId}
 ```
 
@@ -651,7 +651,7 @@ X-Auth-Token: {tokenId}
 ### ACL 바인딩 생성
 
 ```
-POST /v2.0/acl_bindings/
+POST /v2.0/acl_bindings
 X-Auth-Token: {tokenId}
 ```
 
