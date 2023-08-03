@@ -88,7 +88,7 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| aclId | Query | UUID | O | 조회할 ACL ID |
+| aclId | URL | UUID | O | 조회할 ACL ID |
 | fields | Query | String | - | 조회할 ACL의 필드 이름<br>예) `fields=id&fields=name` |
 
 #### 응답
@@ -202,7 +202,7 @@ X-Auth-Token: {tokenId}
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
-| aclId | Query | UUID | O | 삭제할 ACL ID |
+| aclId | URL | UUID | O | 삭제할 ACL ID |
 | tokenId | Header | String | O | 토큰 ID |
 
 #### 응답
@@ -224,7 +224,7 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| aclId | Query | String | O | ACL ID |
+| aclId | URL | String | O | ACL ID |
 | name | Body | String | - | ACL 이름 |
 | description | Body | String | - | ACL 설명 |
 
@@ -349,7 +349,7 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| aclRuleId | Query | UUID | O | 조회할 ACL Rule ID |
+| aclRuleId | URL | UUID | O | 조회할 ACL Rule ID |
 | fields | Query | String | - | 조회할 ACL Rule의 필드 이름<br>예) `fields=id&fields=name` |
 
 #### 응답
@@ -466,7 +466,7 @@ X-Auth-Token: {tokenId}
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
-| aclRuleId | Query | UUID | O | 삭제할 ACL Rule ID |
+| aclRuleId | URL | UUID | O | 삭제할 ACL Rule ID |
 | tokenId | Header | String | O | 토큰 ID |
 
 #### 응답
@@ -489,7 +489,7 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| aclRuleId | Query | UUID | O | 삭제할 ACL Rule ID |
+| aclRuleId | URL | UUID | O | 삭제할 ACL Rule ID |
 | name | Body | String | - | ACL Rule 이름 |
 | description | Body | String | - | ACL Rule 설명 |
 
@@ -615,7 +615,7 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| aclBindingId | Query | UUID | O | 조회할 ACL 바인딩 ID |
+| aclBindingId | URL | UUID | O | 조회할 ACL 바인딩 ID |
 | fields | Query | String | - | 조회할 ACL 바인딩의 필드 이름<br>예) `fields=id&fields=name` |
 
 #### 응답
@@ -722,7 +722,7 @@ X-Auth-Token: {tokenId}
 
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
-| aclBindingId | Query | UUID | O | 삭제할 ACL 바인딩 ID |
+| aclBindingId | URL | UUID | O | 삭제할 ACL 바인딩 ID |
 | tokenId | Header | String | O | 토큰 ID |
 
 #### 응답
