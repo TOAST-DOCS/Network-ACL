@@ -39,8 +39,8 @@ X-Auth-Token: {tokenId}
 | acls.tenant_id | Body | String | 테넌트 ID |
 | acls.description | Body | String | ACL 설명 |
 | acls.name | Body | String | ACL 이름 |
-| acls.create_at | Query | String | ACL 생성시간 |
-| acls.update_at | Query | String | ACL 갱신시간 |
+| acls.create_at | Body | String | ACL 생성시간 |
+| acls.update_at | Body | String | ACL 갱신시간 |
 
 <details><summary>예시</summary>
 <p>
@@ -100,8 +100,8 @@ X-Auth-Token: {tokenId}
 | acl.tenant_id | Body | String | 테넌트 ID |
 | acl.description | Body | String | ACL 설명 |
 | acl.name | Body | String | ACL 이름 |
-| acl.create_at | Query | String | ACL 생성시간 |
-| acl.update_at | Query | String | ACL 갱신시간 |
+| acl.create_at | Body | String | ACL 생성시간 |
+| acl.update_at | Body | String | ACL 갱신시간 |
 
 <details><summary>예시</summary>
 <p>
@@ -138,8 +138,8 @@ X-Auth-Token: {tokenId}
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
 | tenant_id | Body | String | O | 테넌트 ID |
-| name | Query | String | - | ACL 이름 |
-| description | Query | String | - | ACL 설명 |
+| name | Body | String | - | ACL 이름 |
+| description | Body | String | - | ACL 설명 |
 
 <details><summary>예시</summary>
 <p>
@@ -164,10 +164,10 @@ X-Auth-Token: {tokenId}
 | acl | Body | Array | ACL 목록 객체 |
 | acl.id | Body | String | acl ID |
 | acl.tenant_id | Body | String | 테넌트 ID |
-| acl.name | Query | String | ACL 이름 |
-| acl.description | Query | String | ACL 설명 |
-| acl.create_at | Query | String | ACL 생성시간 |
-| acl.update_at | Query | String | ACL 갱신시간 |
+| acl.name | Body | String | ACL 이름 |
+| acl.description | Body | String | ACL 설명 |
+| acl.create_at | Body | String | ACL 생성시간 |
+| acl.update_at | Body | String | ACL 갱신시간 |
 
 <details><summary>예시</summary>
 <p>
@@ -224,9 +224,9 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 | 필수 | 설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| aclId | Header | String | O | ACL ID |
-| name | Query | String | - | ACL 이름 |
-| description | Query | String | - | ACL 설명 |
+| aclId | Query | String | O | ACL ID |
+| name | Body | String | - | ACL 이름 |
+| description | Body | String | - | ACL 설명 |
 
 <details><summary>예시</summary>
 <p>
@@ -250,10 +250,10 @@ X-Auth-Token: {tokenId}
 | acl | Body | Array | ACL 목록 객체 |
 | acl.id | Body | String | acl ID |
 | acl.tenant_id | Body | String | 테넌트 ID |
-| acl.name | Query | String | ACL 이름 |
-| acl.description | Query | String | ACL 설명 |
-| acl.create_at | Query | String | ACL 생성시간 |
-| acl.update_at | Query | String | ACL 갱신시간 |
+| acl.name | Body | String | ACL 이름 |
+| acl.description | Body | String | ACL 설명 |
+| acl.create_at | Body | String | ACL 생성시간 |
+| acl.update_at | Body | String | ACL 갱신시간 |
 
 
 <details><summary>예시</summary>
@@ -303,10 +303,10 @@ X-Auth-Token: {tokenId}
 | acl\_rules | Body | Array | ACL Rule 목록 객체 |
 | acl\_rules.id | Body | String | ACL Rule ID |
 | acl\_rules.tenant_id | Body | String | 테넌트 ID |
-| acl\_rules.name | Query | String | ACL Rule 이름 |
-| acl\_rules.description | Query | String | ACL Rule 설명 |
-| acl\_rules.create_at | Query | String | ACL Rule 생성시간 |
-| acl\_rules.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rules.name | Body | String | ACL Rule 이름 |
+| acl\_rules.description | Body | String | ACL Rule 설명 |
+| acl\_rules.create_at | Body | String | ACL Rule 생성시간 |
+| acl\_rules.update_at | Body | String | ACL Rule 갱신시간 |
 | acl\_rules.acl_id | Body | String | ACL ID |
 | acl\_rules.protocol | Body | String | protocol (tcp,udp,icmp) |
 | acl\_rules.ethertype | Body | String | IPv4로 고정 |
@@ -359,10 +359,10 @@ X-Auth-Token: {tokenId}
 | acl\_rule | Body | Array | ACL Rule 목록 객체 |
 | acl\_rule.id | Body | String | ACL Rule ID |
 | acl\_rule.tenant_id | Body | String | 테넌트 ID |
-| acl\_rule.name | Query | String | ACL Rule 이름 |
-| acl\_rule.description | Query | String | ACL Rule 설명 |
-| acl\_rule.create_at | Query | String | ACL Rule 생성시간 |
-| acl\_rule.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rule.name | Body | String | ACL Rule 이름 |
+| acl\_rule.description | Body | String | ACL Rule 설명 |
+| acl\_rule.create_at | Body | String | ACL Rule 생성시간 |
+| acl\_rule.update_at | Body | String | ACL Rule 갱신시간 |
 | acl\_rule.acl_id | Body | String | ACL ID |
 | acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
 | acl\_rule.ethertype | Body | String | IPv4로 고정 |
@@ -403,8 +403,8 @@ X-Auth-Token: {tokenId}
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
 | tenant_id | Body | String | O | 테넌트 ID |
-| name | Query | String | - |ACL Rule 이름 |
-| description | Query | String | - |ACL Rule 설명 |
+| name | Body | String | - |ACL Rule 이름 |
+| description | Body | String | - |ACL Rule 설명 |
 | acl_id | Body | String | O |ACL ID |
 | protocol | Body | String | -| protocol (tcp,udp,icmp) |
 | ethertype | Body | String | -|IPv4로 고정 |
@@ -425,10 +425,10 @@ X-Auth-Token: {tokenId}
 | acl\_rule | Body | Array | ACL Rule 목록 객체 |
 | acl\_rule.id | Body | String | ACL Rule ID |
 | acl\_rule.tenant_id | Body | String | 테넌트 ID |
-| acl\_rule.name | Query | String | ACL Rule 이름 |
-| acl\_rule.description | Query | String | ACL Rule 설명 |
-| acl\_rule.create_at | Query | String | ACL Rule 생성시간 |
-| acl\_rule.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rule.name | Body | String | ACL Rule 이름 |
+| acl\_rule.description | Body | String | ACL Rule 설명 |
+| acl\_rule.create_at | Body | String | ACL Rule 생성시간 |
+| acl\_rule.update_at | Body | String | ACL Rule 갱신시간 |
 | acl\_rule.acl_id | Body | String | ACL ID |
 | acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
 | acl\_rule.ethertype | Body | String | IPv4로 고정 |
@@ -490,8 +490,8 @@ X-Auth-Token: {tokenId}
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
 | aclRuleId | Query | UUID | O | 삭제할 ACL Rule ID |
-| name | Query | String | - | ACL Rule 이름 |
-| description | Query | String | - | ACL Rule 설명 |
+| name | Body | String | - | ACL Rule 이름 |
+| description | Body | String | - | ACL Rule 설명 |
 
 <details><summary>예시</summary>
 <p>
@@ -515,10 +515,10 @@ X-Auth-Token: {tokenId}
 | acl\_rule | Body | Array | ACL Rule 목록 객체 |
 | acl\_rule.id | Body | String | ACL Rule ID |
 | acl\_rule.tenant_id | Body | String | 테넌트 ID |
-| acl\_rule.name | Query | String | ACL Rule 이름 |
-| acl\_rule.description | Query | String | ACL Rule 설명 |
-| acl\_rule.create_at | Query | String | ACL Rule 생성시간 |
-| acl\_rule.update_at | Query | String | ACL Rule 갱신시간 |
+| acl\_rule.name | Body | String | ACL Rule 이름 |
+| acl\_rule.description | Body | String | ACL Rule 설명 |
+| acl\_rule.create_at | Body | String | ACL Rule 생성시간 |
+| acl\_rule.update_at | Body | String | ACL Rule 갱신시간 |
 | acl\_rule.acl_id | Body | String | ACL ID |
 | acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
 | acl\_rule.ethertype | Body | String | IPv4로 고정 |
@@ -571,8 +571,8 @@ X-Auth-Token: {tokenId}
 | acl\_bindings | Body | Array | ACL 바인딩 목록 객체 |
 | acl\_bindings.id | Body | String | ACL 바인딩 ID |
 | acl\_bindings.tenant_id | Body | String | 테넌트 ID |
-| acl\_bindings.acl_id | Query | String | Network와 바인딩되는 ACL ID |
-| acl\_bindings.network_id | Query | String | ACL과 바인딩되는 Network ID |
+| acl\_bindings.acl_id | Body | String | Network와 바인딩되는 ACL ID |
+| acl\_bindings.network_id | Body | String | ACL과 바인딩되는 Network ID |
 
 
 <details><summary>예시</summary>
@@ -625,8 +625,8 @@ X-Auth-Token: {tokenId}
 | acl\_binding | Body | Array | ACL 바인딩 목록 객체 |
 | acl\_binding.id | Body | String | ACL 바인딩 ID |
 | acl\_binding.tenant_id | Body | String | 테넌트 ID |
-| acl\_binding.acl_id | Query | String | Network와 바인딩되는 ACL ID |
-| acl\_binding.network_id | Query | String | ACL과 바인딩되는 Network ID |
+| acl\_binding.acl_id | Body | String | Network와 바인딩되는 ACL ID |
+| acl\_binding.network_id | Body | String | ACL과 바인딩되는 Network ID |
 
 
 <details><summary>예시</summary>
@@ -650,13 +650,18 @@ X-Auth-Token: {tokenId}
  
 ### ACL 바인딩 생성
 
+```
+POST /v2.0/acl_bindings/
+X-Auth-Token: {tokenId}
+```
+
 #### 요청
 
 | 이름 | 종류 | 형식 |  필수 |설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
 | tenant_id | Body | String | O | 테넌트 ID |
-| network_id | Query | String | O | Network ID |
+| network_id | Body | String | O | Network ID |
 | acl_id | Body | String | O |ACL ID |
 
 <details><summary>예시</summary>
@@ -683,8 +688,8 @@ X-Auth-Token: {tokenId}
 | acl\_binding | Body | Array | ACL 바인딩 목록 객체 |
 | acl\_binding.id | Body | String | ACL 바인딩 ID |
 | acl\_binding.tenant_id | Body | String | 테넌트 ID |
-| acl\_binding.acl_id | Query | String | Network와 바인딩되는 ACL ID |
-| acl\_binding.network_id | Query | String | ACL과 바인딩되는 Network ID |
+| acl\_binding.acl_id | Body | String | Network와 바인딩되는 ACL ID |
+| acl\_binding.network_id | Body | String | ACL과 바인딩되는 Network ID |
 
 <details><summary>예시</summary>
 <p>
