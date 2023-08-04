@@ -402,7 +402,7 @@ X-Auth-Token: {tokenId}
 | 이름 | 종류 | 형식 |  필수 |설명 |
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
-| acl\_rule | Body | Array | O | ACL 목록 객체 |
+| acl\_rule | Body | Array | O | ACL Rule 목록 객체 |
 | acl\_rule.tenant_id | Body | String | O | 테넌트 ID |
 | acl\_rule.description | Body | String | - |ACL Rule 설명 |
 | acl\_rule.acl_id | Body | String | O |ACL ID |
@@ -502,7 +502,7 @@ X-Auth-Token: {tokenId}
 |---|---|---|---|---|
 | tokenId | Header | String | O | 토큰 ID |
 | aclRuleId | URL | UUID | O | 삭제할 ACL Rule ID |
-| acl\_rule | Body | Array | O | ACL 목록 객체 |
+| acl\_rule | Body | Array | O | ACL Rule 목록 객체 |
 | acl\_rule.description | Body | String | - | ACL Rule 설명 |
 
 <details><summary>예시</summary>
