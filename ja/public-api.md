@@ -305,7 +305,6 @@ X-Auth-Token: {tokenId}
 | acl\_rules | Body | Array | ACL Rule 목록 객체 |
 | acl\_rules.id | Body | String | ACL Rule ID |
 | acl\_rules.tenant_id | Body | String | 테넌트 ID |
-| acl\_rules.name | Body | String | ACL Rule 이름 |
 | acl\_rules.description | Body | String | ACL Rule 설명 |
 | acl\_rules.create_at | Body | String | ACL Rule 생성시간 |
 | acl\_rules.update_at | Body | String | ACL Rule 갱신시간 |
@@ -361,7 +360,6 @@ X-Auth-Token: {tokenId}
 | acl\_rule | Body | Array | ACL Rule 목록 객체 |
 | acl\_rule.id | Body | String | ACL Rule ID |
 | acl\_rule.tenant_id | Body | String | 테넌트 ID |
-| acl\_rule.name | Body | String | ACL Rule 이름 |
 | acl\_rule.description | Body | String | ACL Rule 설명 |
 | acl\_rule.create_at | Body | String | ACL Rule 생성시간 |
 | acl\_rule.update_at | Body | String | ACL Rule 갱신시간 |
@@ -406,7 +404,6 @@ X-Auth-Token: {tokenId}
 | tokenId | Header | String | O | 토큰 ID |
 | acl\_rule | Body | Array | O | ACL 목록 객체 |
 | acl\_rule.tenant_id | Body | String | O | 테넌트 ID |
-| acl\_rule.name | Body | String | - |ACL Rule 이름 |
 | acl\_rule.description | Body | String | - |ACL Rule 설명 |
 | acl\_rule.acl_id | Body | String | O |ACL ID |
 | acl\_rule.protocol | Body | String | -| protocol (tcp,udp,icmp) |
@@ -441,7 +438,6 @@ X-Auth-Token: {tokenId}
 | acl\_rule | Body | Array | ACL Rule 목록 객체 |
 | acl\_rule.id | Body | String | ACL Rule ID |
 | acl\_rule.tenant_id | Body | String | 테넌트 ID |
-| acl\_rule.name | Body | String | ACL Rule 이름 |
 | acl\_rule.description | Body | String | ACL Rule 설명 |
 | acl\_rule.create_at | Body | String | ACL Rule 생성시간 |
 | acl\_rule.update_at | Body | String | ACL Rule 갱신시간 |
@@ -493,7 +489,7 @@ X-Auth-Token: {tokenId}
 
 ### ACL Rule 수정
 
-기존 ACL Rule을 수정합니다. (이름과 설명만 수정 가능 합니다)
+기존 ACL Rule을 수정합니다. (설명만 수정 가능 합니다)
 
 ```
 PUT /v2.0/acl_rules/{aclRuleId}
@@ -507,7 +503,6 @@ X-Auth-Token: {tokenId}
 | tokenId | Header | String | O | 토큰 ID |
 | aclRuleId | URL | UUID | O | 삭제할 ACL Rule ID |
 | acl\_rule | Body | Array | O | ACL 목록 객체 |
-| acl\_rule.name | Body | String | - | ACL Rule 이름 |
 | acl\_rule.description | Body | String | - | ACL Rule 설명 |
 
 <details><summary>예시</summary>
@@ -517,8 +512,7 @@ X-Auth-Token: {tokenId}
 {
   "acl_rule": 
     {
-      "description": "acl_rule1",
-      "name": "rule1"
+      "description": "acl_rule1"
     }
 }
 ```
@@ -532,7 +526,6 @@ X-Auth-Token: {tokenId}
 | acl\_rule | Body | Array | ACL Rule 목록 객체 |
 | acl\_rule.id | Body | String | ACL Rule ID |
 | acl\_rule.tenant_id | Body | String | 테넌트 ID |
-| acl\_rule.name | Body | String | ACL Rule 이름 |
 | acl\_rule.description | Body | String | ACL Rule 설명 |
 | acl\_rule.create_at | Body | String | ACL Rule 생성시간 |
 | acl\_rule.update_at | Body | String | ACL Rule 갱신시간 |
