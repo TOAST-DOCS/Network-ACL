@@ -318,7 +318,7 @@ X-Auth-Token: {tokenId}
 | acl\_rules.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535)|
 | acl\_rules.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rules.policy | Body | String | allow or deny  |
-| acl\_rules.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
+| acl\_rules.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102~32764 사용).|
 
 <details><summary>예시</summary>
 <p>
@@ -373,7 +373,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535)|
 | acl\_rule.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | allow or deny  |
-| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102~32764 사용).|
 
 
 <details><summary>예시</summary>
@@ -415,7 +415,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | -|dst 포트 범위의 최솟값(1~65535)|
 | acl\_rule.dst\_port\_range\_min | Body | Integer | -|dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | O| allow or deny  |
-| acl\_rule.order | Body | Integer | O | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
+| acl\_rule.order | Body | Integer | O | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102~32764 사용).|
 
 <details><summary>예시</summary>
 <p>
@@ -451,7 +451,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535)|
 | acl\_rule.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | allow or deny  |
-| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102~32764 사용).|
 
 <details><summary>예시</summary>
 <p>
@@ -539,7 +539,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535) |
 | acl\_rule.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | allow or deny  |
-| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102~32764 사용).|
 
 
 <details><summary>예시</summary>
