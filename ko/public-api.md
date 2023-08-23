@@ -318,7 +318,7 @@ X-Auth-Token: {tokenId}
 | acl\_rules.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535)|
 | acl\_rules.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rules.policy | Body | String | allow or deny  |
-| acl\_rules.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rules.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
 
 <details><summary>예시</summary>
 <p>
@@ -364,7 +364,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.create_at | Body | String | ACL Rule 생성 시간 |
 | acl\_rule.update_at | Body | String | ACL Rule 갱신 시간 |
 | acl\_rule.acl_id | Body | String | ACL ID |
-| acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
+| acl\_rule.protocol | Body | String | protocol(tcp, udp, icmp) |
 | acl\_rule.ethertype | Body | String | IPv4로 고정 |
 | acl\_rule.src\_port\_range\_min | Body | Integer | src 포트 범위의 최솟값(1~65535)|
 | acl\_rule.src\_port\_range\_max | Body | Integer | src 포트 범위의 최댓값(1~65535)|
@@ -373,7 +373,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535)|
 | acl\_rule.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | allow or deny  |
-| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
 
 
 <details><summary>예시</summary>
@@ -406,7 +406,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.tenant_id | Body | String | - | 테넌트 ID |
 | acl\_rule.description | Body | String | - |ACL Rule 설명 |
 | acl\_rule.acl_id | Body | String | O |ACL ID |
-| acl\_rule.protocol | Body | String | -| protocol (tcp,udp,icmp) |
+| acl\_rule.protocol | Body | String | -| protocol(tcp, udp, icmp) |
 | acl\_rule.ethertype | Body | String | -|IPv4로 고정 |
 | acl\_rule.src\_port\_range\_min | Body | Integer | -|src 포트 범위의 최솟값(1~65535)|
 | acl\_rule.src\_port\_range\_max | Body | Integer | -|src 포트 범위의 최댓값(1~65535)|
@@ -415,7 +415,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | -|dst 포트 범위의 최솟값(1~65535)|
 | acl\_rule.dst\_port\_range\_min | Body | Integer | -|dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | O| allow or deny  |
-| acl\_rule.order | Body | Integer | O | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule.order | Body | Integer | O | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
 
 <details><summary>예시</summary>
 <p>
@@ -442,7 +442,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.create_at | Body | String | ACL Rule 생성 시간 |
 | acl\_rule.update_at | Body | String | ACL Rule 갱신 시간 |
 | acl\_rule.acl_id | Body | String | ACL ID |
-| acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
+| acl\_rule.protocol | Body | String | protocol(tcp, udp, icmp) |
 | acl\_rule.ethertype | Body | String | IPv4로 고정 |
 | acl\_rule.src\_port\_range\_min | Body | Integer | src 포트 범위의 최솟값(1~65535)|
 | acl\_rule.src\_port\_range\_max | Body | Integer | src 포트 범위의 최댓값(1~65535)|
@@ -451,7 +451,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535)|
 | acl\_rule.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | allow or deny  |
-| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
 
 <details><summary>예시</summary>
 <p>
@@ -489,7 +489,7 @@ X-Auth-Token: {tokenId}
 
 ### ACL Rule 수정
 
-기존 ACL Rule을 수정합니다. (설명만 수정 가능 합니다)
+기존 ACL Rule을 수정합니다(설명만 수정 가능 합니다).
 
 ```
 PUT /v2.0/acl_rules/{aclRuleId}
@@ -530,7 +530,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.create_at | Body | String | ACL Rule 생성 시간 |
 | acl\_rule.update_at | Body | String | ACL Rule 갱신 시간 |
 | acl\_rule.acl_id | Body | String | ACL ID |
-| acl\_rule.protocol | Body | String | protocol (tcp,udp,icmp) |
+| acl\_rule.protocol | Body | String | protocol(tcp, udp, icmp) |
 | acl\_rule.ethertype | Body | String | IPv4로 고정 |
 | acl\_rule.src\_port\_range\_min | Body | Integer | src 포트 범위의 최솟값(1~65535)|
 | acl\_rule.src\_port\_range\_max | Body | Integer | src 포트 범위의 최댓값(1~65535)|
@@ -539,7 +539,7 @@ X-Auth-Token: {tokenId}
 | acl\_rule.dst\_port\_range\_max | Body | Integer | dst 포트 범위의 최솟값(1~65535) |
 | acl\_rule.dst\_port\_range\_min | Body | Integer | dst 포트 범위의 최댓값(1~65535)|
 | acl\_rule.policy | Body | String | allow or deny  |
-| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨. (102 ~32764 사용)|
+| acl\_rule.order | Body | Integer | ACL Rule 적용순서, 숫자가 작을수록 먼저 적용됨(102 ~32764 사용).|
 
 
 <details><summary>예시</summary>
@@ -581,8 +581,8 @@ X-Auth-Token: {tokenId}
 | acl\_bindings | Body | Array | ACL 바인딩 목록 객체 |
 | acl\_bindings.id | Body | String | ACL 바인딩 ID |
 | acl\_bindings.tenant_id | Body | String | 테넌트 ID |
-| acl\_bindings.acl_id | Body | String | Network와 바인딩되는 ACL ID |
-| acl\_bindings.network_id | Body | String | ACL과 바인딩되는 Network ID |
+| acl\_bindings.acl_id | Body | String | Network와 바인딩 되는 ACL ID |
+| acl\_bindings.network_id | Body | String | ACL과 바인딩 되는 Network ID |
 
 
 <details><summary>예시</summary>
@@ -635,8 +635,8 @@ X-Auth-Token: {tokenId}
 | acl\_binding | Body | Array | ACL 바인딩 목록 객체 |
 | acl\_binding.id | Body | String | ACL 바인딩 ID |
 | acl\_binding.tenant_id | Body | String | 테넌트 ID |
-| acl\_binding.acl_id | Body | String | Network와 바인딩되는 ACL ID |
-| acl\_binding.network_id | Body | String | ACL과 바인딩되는 Network ID |
+| acl\_binding.acl_id | Body | String | Network와 바인딩 되는 ACL ID |
+| acl\_binding.network_id | Body | String | ACL과 바인딩 되는 Network ID |
 
 
 <details><summary>예시</summary>
@@ -699,8 +699,8 @@ X-Auth-Token: {tokenId}
 | acl\_binding | Body | Array | ACL 바인딩 목록 객체 |
 | acl\_binding.id | Body | String | ACL 바인딩 ID |
 | acl\_binding.tenant_id | Body | String | 테넌트 ID |
-| acl\_binding.acl_id | Body | String | Network와 바인딩되는 ACL ID |
-| acl\_binding.network_id | Body | String | ACL과 바인딩되는 Network ID |
+| acl\_binding.acl_id | Body | String | Network와 바인딩 되는 ACL ID |
+| acl\_binding.network_id | Body | String | ACL과 바인딩 되는 Network ID |
 
 <details><summary>예시</summary>
 <p>
