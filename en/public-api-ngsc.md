@@ -1,12 +1,12 @@
 ## Network > Network ACL > API v2 Guide
 
-To use the API, API endpoint and token are required. Refer to [API usage preparations](/Compute/Compute/ko/identity-api-gov/) to prepare the information required to use the API.
+To use the API, API endpoint and token are required. Refer to [API usage preparations](/Compute/Compute/ko/identity-api-ngsc/) to prepare the information required to use the API.
 
 For Security Groups API, the `network` type endpoint is used. For more details, see `serviceCatalog` from the response of token issuance.
 
 | Format | Region | Endpoint |
 |---|---|---|
-| network | Korea (Pangyo) Region<br>Korea (Pyeongchon) Region | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com |
+| network | Korea (Pyeongchon) Region | https://kr1-api-network-infrastructure.gncloud.go.kr |
 
 In each API response, you may find fields that are not specified within this guide. Those fields are for NHN Cloud internal usage, so refrain from using them because they may be changed without prior notice.
 
@@ -489,7 +489,8 @@ X-Auth-Token: {tokenId}
   		"order":103,
   		"acl_id":"5efaec75-8f07-4f5f-83b1-8b4c11c07e0b"
   	}
-}```
+}
+```
 </p>
 </details>
 
@@ -532,7 +533,7 @@ X-Auth-Token: {tokenId}
     	"updated_at":"2022-12-16T06:58:54Z",
     	"id":"005a5644-4e43-47fcb3d9-6c1befe12f7b",
     	"src_ip":"0.0.0.0/0",
-    	"dst_port_range_min":null,
+    	"dst_port_range_min":null
     	"dst_port_range_max":null,
     	"revision_number":0,
     	"tenant_id":"43b53d88b7a54d3aa5472bd800f1cbce",

@@ -6,7 +6,8 @@ For Security Groups API, the `network` type endpoint is used. For more details, 
 
 | Format | Region | Endpoint |
 |---|---|---|
-| network | Korea (Pangyo) Region<br>Korea (Pyeongchon) Region | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com |
+| network | Korea (Pangyo) Region | https://kr1-api-network-infrastructure.gov-nhncloudservice.com |
+| network | Korea (Pyeongchon) Region | https://kr2-api-network-infrastructure.gov-nhncloudservice.com |
 
 In each API response, you may find fields that are not specified within this guide. Those fields are for NHN Cloud internal usage, so refrain from using them because they may be changed without prior notice.
 
@@ -369,7 +370,8 @@ This API does not require a request body.
 		"src_port_range_min":null
 	}
   ]
-}```
+}
+```
 </p>
 </details>
 
@@ -489,7 +491,8 @@ X-Auth-Token: {tokenId}
   		"order":103,
   		"acl_id":"5efaec75-8f07-4f5f-83b1-8b4c11c07e0b"
   	}
-}```
+}
+```
 </p>
 </details>
 

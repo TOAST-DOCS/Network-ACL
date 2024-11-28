@@ -1,12 +1,12 @@
 ## Network > Network ACL > API v2ガイド
 
-APIを使用するにはAPIエンドポイントとトークン などが必要です。 [API使用準備](/Compute/Compute/ko/identity-api-gov/)を参照してAPIの使用に必要な情報を準備します。
+APIを使用するにはAPIエンドポイントとトークン などが必要です。 [API使用準備](/Compute/Compute/ko/identity-api-ngsc/)を参照してAPIの使用に必要な情報を準備します。
 
 セキュリティグループAPIは`network`タイプエンドポイントを利用します。正確なエンドポイントはトークン発行レスポンスの`serviceCatalog`を参照します。
 
 | タイプ | リージョン | エンドポイント |
 |---|---|---|
-| network | 韓国(パンギョ)リージョン<br>韓国(ピョンチョン)リージョン | https://kr1-api-network-infrastructure.nhncloudservice.com<br>https://kr2-api-network-infrastructure.nhncloudservice.com |
+| network | 韓国(ピョンチョン)リージョン | https://kr1-api-network-infrastructure.gncloud.go.kr |
 
 APIレスポンスにガイドに明示されていないフィールドが表示される場合があります。このようなフィールドはNHN Cloud内部用途に使用され、予告なしに変更される可能性があるため、使用しないでください。
 
@@ -444,7 +444,6 @@ X-Auth-Token: {tokenId}
 		"src_port_range_min":null
 	}
 }
-
 ```
 </p>
 </details>
@@ -492,6 +491,7 @@ X-Auth-Token: {tokenId}
   		"acl_id":"5efaec75-8f07-4f5f-83b1-8b4c11c07e0b"
   	}
 }
+
 ```
 </p>
 </details>
@@ -546,7 +546,8 @@ X-Auth-Token: {tokenId}
     	"acl_id":"5efaec75-8f07-4f5f-83b1-8b4c11c07e0b",
     	"src_port_range_min":null
     }
-}```
+}
+```
 </p>
 </details>
 
