@@ -7,7 +7,7 @@ NHN Cloud는 Network ACL 기능을 제공합니다.
 ## ACL 기능
 
 네트워크로 유입되는 패킷을 제어하려면 ACL 기능을 이용할 수 있습니다.
-이 기능은 [보안 그룹](/Network/VPC/ko/console-guide/#_8)과 구분되는 기능으로써 차이점은 다음과 같습니다.
+이 기능은 [보안 그룹](/Network/Security%20Groups/ko/overview/)과 구분되는 기능으로써 차이점은 다음과 같습니다.
 
 > [참고] 보안 그룹과 Network ACL 기능 비교
 >
