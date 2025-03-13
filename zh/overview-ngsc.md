@@ -7,7 +7,7 @@ This function allows you to control access per protocol, IP address, and port.
 ## ACL Function
 
 You can use the ACL function to control packets coming into the network.
-This function is different from the [security group](https://docs.toast.com/en/Network/VPC/en/Security%20Groups/en/overview/), and the differences are as follows:
+This function is different from the [security group](/Network/Security%20Groups/en/overview/), and the differences are as follows:
 
 > [Note] Security Group vs Network ACL
 >
