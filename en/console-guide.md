@@ -1,7 +1,6 @@
 ## Network > Network ACL > Console User Guide
 
 ## ACL
-For details on the ACL function, refer to the [Network ACL](/Network/Network%20ACL/en/overview/) document.
 
 #### Create an ACL
 To create an ACL, click **Create ACL** and enter the following values:
@@ -42,14 +41,14 @@ Click **Confirm** to create the ACL rule.
 
 > [Note] Source and destination addresses
 >
-> For example, assuming that the floating IP 133.186.237.10 is associated with the fixed IP 192.168.0.10 in the NHN Cloud instance, and if the purpose of configuration is to allow access from the same VPC, 
+> For example, assuming that the floating IP 133.186.237.10 is associated with the fixed IP 192.168.0.10 in the NHN Cloud instance, and if the purpose of configuration is to allow access from the same VPC,
 > it is convenient to set the fixed IP 192.168.0.10 as the address in the ACL rule.
 > Assuming that you set a rule that allows port 80 access from 192.168.0.10 to 192.168.0.20 between two instances of 192.168.0.10 (fip:133.186.237.10) and 192.168.0.20 (fip:133.186.237.20):
-> 
+>
 > If you set the rule with a fixed IP, set it as follows and access from 192.168.0.10 with the fixed IP,  like curl http://192.168.0.20.
 > "protocol"="tcp", "src cidr"="192.168.0.10/32", "dst cidr"="192.168.0.20/32", "dst_port_range_min"=80, "policy"="allow"
 > "protocol"="tcp", "src cidr"="192.168.0.20/32", "src_port_range_min"=80, "dst cidr"="192.168.0.10/32", "policy"="allow"
-> 
+>
 > If you set the rule with a floating IP, set it as follows and access from 133.186.237.10 with the floating IP,  like curl http://133.186.237.20.
 > "protocol"="tcp", "src cidr"="133.186.237.10/32", "dst cidr"="192.168.0.20/32", "dst_port_range_min"=80, "policy"="allow"
 > "protocol"="tcp", "src cidr"="192.168.0.20/32", "src_port_range_min"=80, "dst cidr"="133.186.0.10/32", "policy"="allow"
@@ -58,7 +57,7 @@ Click **Confirm** to create the ACL rule.
 >
 > In case of access from another VPC
 >
-> To allow port 80 access from 133.186.237.30 (VPC1) to 192.168.0.40 (fip:133.186.237.40, VPC2), 
+> To allow port 80 access from 133.186.237.30 (VPC1) to 192.168.0.40 (fip:133.186.237.40, VPC2),
 > set the ACL rule bound to VPC2 as follows. (No ACL rule required for VPC1.)
 > "protocol"="tcp", "src cidr"="133.186.237.30/32", "dst cidr"="192.168.0.40/32", "dst_port_range_min"=80, "policy"="allow"
 > "protocol"="tcp", "src cidr"="192.168.0.40/32", "src_port_range_min"=80, "dst cidr"="133.186.237.30/32", "policy"="allow"
@@ -91,4 +90,3 @@ For each network, only one ACL can be bound.
 
 #### Unbind an ACL
 Select the network to unbind ACL from and click **Confirm**.
-
