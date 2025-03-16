@@ -1,7 +1,6 @@
 ## Network > Network ACL > コンソール使用ガイド
 
 ## ACL
-ACL機能の詳細は[Network ACL](/Network/Network%20ACL/ko/overview/)文書を参照してください。
 
 #### ACL作成
 ACLを作成するには**ACL作成**ボタンをクリックし、次の値を入力します。
@@ -42,14 +41,14 @@ ACL Ruleを追加すると、このACLを使用するすべてのネットワー
 
 > [参考] srcとdstアドレス
 >
-> 例えば、NHN Cloudインスタンスから固定IP 192.168.0.10にFloating IP 133.186.237.10を接続すると、同じVPCからのアクセスが目的の場合 
+> 例えば、NHN Cloudインスタンスから固定IP 192.168.0.10にFloating IP 133.186.237.10を接続すると、同じVPCからのアクセスが目的の場合
 > ACL Ruleは固定IP 192.168.0.10をアドレスに設定するのが便利です。
 > 192.168.0.10(fip:133.186.237.10)と 192.168.0.20(fip:133.186.237.20)、2つのインスタンスの間に10番から20番に80番ポート接続を許可するルール(rule)を設定すると仮定すると
-> 
+>
 > 固定IPに設定する場合、次のように設定して192.168.0.10からcurl http://192.168.0.20のように固定IPでアクセスしてください。
 > "protocol"="tcp", "src cidr"="192.168.0.10/32", "dst cidr"="192.168.0.20/32", "dst_port_range_min"=80, "policy"="allow"
 > "protocol"="tcp", "src cidr"="192.168.0.20/32", "src_port_range_min"=80, "dst cidr"="192.168.0.10/32", "policy"="allow"
-> 
+>
 > Floating IPに設定する場合、次のように設定し、133.186.237.10からcurl http://133.186.237.20のようにFloating IPでアクセスしてください。
 > "protocol"="tcp", "src cidr"="133.186.237.10/32", "dst cidr"="192.168.0.20/32", "dst_port_range_min"=80, "policy"="allow"
 > "protocol"="tcp", "src cidr"="192.168.0.20/32", "src_port_range_min"=80, "dst cidr"="133.186.0.10/32", "policy"="allow"
@@ -75,7 +74,7 @@ ACL Ruleを追加すると、このACLを使用するすべてのネットワー
 
 > [参考] ACLとACL Ruleの数
 >
-> プロジェクトごとにACLを最大10個まで作成できます。 
+> プロジェクトごとにACLを最大10個まで作成できます。
 > プロジェクトごとにACL Ruleを最大100個まで作成できます。
 #### ACL Rule変更
 ルールのプロパティのうち、説明のみ変更できます。
