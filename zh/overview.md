@@ -4,6 +4,7 @@ NHN Cloud provides the network access control list (ACL) function.
 This function allows you to control access per protocol, IP address, and port.
 
 
+<a id="1"></a>
 ## ACL Function
 
 You can use the ACL function to control packets coming into the network.
@@ -23,11 +24,14 @@ Even if traffic is allowed in the network ACL setting, it can be blocked by the 
 
 To use the network ACL function, you need to configure the following.
 
+
+<a id="2"></a>
 ### ACL
 * Up to 10 ACLs can be created per project.
 * Its properties are name and description.
 
 
+<a id="3"></a>
 ### ACL Rule
 * Up to 100 rules can be created per project.
 * Their order number determines their priority. Lower number has higher priority.
@@ -38,12 +42,14 @@ To use the network ACL function, you need to configure the following.
 * For source and destination, the rules must always be set as a pair.
 
 
+<a id="4"></a>
 ### ACL Binding
 * The maximum number of networks that can be bound to an ACL is equal to the number of VPCs.
 * An ACL can be applied to multiple networks.
 * One ACL can be applied per network.
 
 > [Note]
+> <a id="5"></a>
 > ### Network and ACL behaviors
 > * Deleting a network also deletes its ACL binding, but ACL itself remains intact.
 > * If there is any network bound to an ACL, the ACL cannot be deleted.
