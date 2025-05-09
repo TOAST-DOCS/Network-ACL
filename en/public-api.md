@@ -1,6 +1,6 @@
 ## Network > Network ACL > API v2 Guide
 
-To use the API, API endpoint and token are required. Refer to [API usage preparations](/Compute/Compute/ko/identity-api-gov/) to prepare the information required to use the API.
+To use the API, API endpoint and token are required. Refer to [API usage preparations](/Compute/Compute/ko/identity-api/) to prepare the information required to use the API.
 
 For Security Groups API, the `network` type endpoint is used. For more details, see `serviceCatalog` from the response of token issuance.
 
