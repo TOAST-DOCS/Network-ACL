@@ -1,4 +1,5 @@
-## Network > Network ACL > API v2ガイド
+<a id="network-network-acl-api-v2-guide"></a>
+## Network > Network ACL > API v2ガイド { #network-network-acl-api-v2-guide }
 
 APIを使用するにはAPIエンドポイントとトークン などが必要です。 [API使用準備](/Compute/Compute/ko/identity-api/)を参照してAPIの使用に必要な情報を準備します。
 
@@ -12,15 +13,16 @@ APIレスポンスにガイドに明示されていないフィールドが表�
 
 
 <a id="1"></a>
-## Network ACL
+## Network ACL { #1 }
 
 <a id="2"></a>
-### ACLリスト表示
+### ACLリスト表示 { #2 }
 ```
 GET /v2.0/acls
 X-Auth-Token: {tokenId}
 ```
 
+<a id="2-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -32,6 +34,7 @@ X-Auth-Token: {tokenId}
 | sort_key | Query | String | - | 照会するACLのソートキー<br>`sort_dir`で指定した方向でソート |
 | fields | Query | String | - | 照会するACLのフィールド名<br>例) `fields=id&fields=name` |
 
+<a id="2-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -77,13 +80,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="3"></a>
-### ACL表示
+### ACL表示 { #3 }
 
 ```
 GET /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="3-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -94,6 +98,7 @@ X-Auth-Token: {tokenId}
 | aclId | URL | UUID | O | 照会するACL ID |
 | fields | Query | String | - | 照会するACLのフィールド名<br>例) `fields=id&fields=name` |
 
+<a id="3-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -129,13 +134,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="4"></a>
-### ACL作成
+### ACL作成 { #4 }
  
 ```
 POST /v2.0/acls
 X-Auth-Token: {tokenId}
 ```
 
+<a id="4-request"></a>
 #### リクエスト
 
 | 名前 | 種類 | 形式 | 必須 | 説明 |
@@ -162,6 +168,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="4-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -197,13 +204,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="5"></a>
-### ACL削除
+### ACL削除 { #5 }
 
 ```
 DELETE /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="5-request"></a>
 #### リクエスト
 
 | 名前 | 種類 | 形式 | 必須 | 説明 |
@@ -211,6 +219,7 @@ X-Auth-Token: {tokenId}
 | aclId | URL | UUID | O | 削除するACL ID |
 | tokenId | Header | String | O | トークンID |
 
+<a id="5-response"></a>
 #### レスポンス
 
 このAPIはレスポンス本文を返しません。
@@ -218,7 +227,7 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="6"></a>
-### ACL修正
+### ACL修正 { #6 }
 既存のACLを修正します(名前と説明のみ修正可能)。
 
 ```
@@ -226,6 +235,7 @@ PUT /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="6-request"></a>
 #### リクエスト
 
 | 名前 | 種類 | 形式 | 必須 | 説明 |
@@ -251,6 +261,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="6-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -287,13 +298,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="7"></a>
-### ACL Ruleリスト表示
+### ACL Ruleリスト表示 { #7 }
  
 ```
 GET /v2.0/acl_rules
 X-Auth-Token: {tokenId}
 ```
 
+<a id="7-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -305,6 +317,7 @@ X-Auth-Token: {tokenId}
 | sort_key | Query | String | - | 照会するACL Ruleのソートキー<br>`sort_dir`で指定した方向でソート |
 | fields | Query | String | - | 照会するACL Ruleのフィールド名<br>例) `fields=id&fields=name` |
 
+<a id="7-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -384,13 +397,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="8"></a>
-### ACL Rule表示
+### ACL Rule表示 { #8 }
 
 ```
 GET /v2.0/acl_rules/{aclRuleId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="8-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -401,6 +415,7 @@ X-Auth-Token: {tokenId}
 | aclRuleId | URL | UUID | O | 照会するACL Rule ID |
 | fields | Query | String | - | 照会するACL Ruleのフィールド名<br>例) `fields=id&fields=name` |
 
+<a id="8-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -460,13 +475,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="9"></a>
-### ACL Rule作成
+### ACL Rule作成 { #9 }
 
 ```
 POST /v2.0/acl_rules
 X-Auth-Token: {tokenId}
 ```
 
+<a id="9-request"></a>
 #### リクエスト
 
 | 名前 | 種類 | 形式 | 必須 |説明 |
@@ -505,6 +521,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="9-response"></a>
 #### レスポンス
 
  
@@ -615,6 +632,37 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="10"></a>
+### ACL Rule削除 { #10 }
+
+<!-- TODO: translate body -->
+
+<a id="10-1"></a>
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="10-2"></a>
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<a id="11"></a>
+### ACL Rule修正 { #11 }
+
+<!-- TODO: translate body -->
+
+<a id="11-1"></a>
+#### リクエスト
+
+<!-- TODO: translate body -->
+
+<a id="11-2"></a>
+#### レスポンス
+
+<!-- TODO: translate body -->
+
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Duplicate レスポンス heading under ACL Rule作成 (t24); no corresponding ko heading exists for a second response section there) -->
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -653,13 +701,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="12"></a>
-### ACLバインディングリスト表示
+### ACLバインディングリスト表示 { #12 }
 
 ```
 GET /v2.0/acl_bindings
 X-Auth-Token: {tokenId}
 ```
 
+<a id="12-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -671,6 +720,7 @@ X-Auth-Token: {tokenId}
 | sort_key | Query | String | - | 照会するACLバインディングのソートキー<br>`sort_dir`で指定した方向でソート |
 | fields | Query | String | - | 照会するACLバインディングのフィールド名<br>例) `fields=id&fields=name` |
 
+<a id="12-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -709,13 +759,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="13"></a>
-### ACLバインディング表示
+### ACLバインディング表示 { #13 }
 
 ```
 GET /v2.0/acl_bindings/{aclBindingId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="13-request"></a>
 #### リクエスト
 
 このAPIはリクエスト本文を要求しません。
@@ -726,6 +777,7 @@ X-Auth-Token: {tokenId}
 | aclBindingId | URL | UUID | O | 照会するACLバインディングID |
 | fields | Query | String | - | 照会するACLバインディングのフィールド名<br>例) `fields=id&fields=name` |
 
+<a id="13-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -757,13 +809,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="14"></a> 
-### ACLバインディングの作成
+### ACLバインディングの作成 { #14 }
 
 ```
 POST /v2.0/acl_bindings
 X-Auth-Token: {tokenId}
 ```
 
+<a id="14-request"></a>
 #### リクエスト
 
 | 名前 | 種類 | 形式 | 必須 |説明 |
@@ -791,6 +844,7 @@ X-Auth-Token: {tokenId}
 </details>
 
 
+<a id="14-response"></a>
 #### レスポンス
 
 | 名前 | 種類 | 形式 | 説明 |
@@ -821,7 +875,7 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="15"></a>
-### ACLバインディングの削除
+### ACLバインディングの削除 { #15 }
 
 ```
 DELETE /v2.0/acl_bindings/{aclBindingId}
@@ -829,6 +883,7 @@ X-Auth-Token: {tokenId}
 ```
 
 
+<a id="15-request"></a>
 #### リクエスト
 
 | 名前 | 種類 | 形式 | 必須 | 説明 |
@@ -836,6 +891,7 @@ X-Auth-Token: {tokenId}
 | aclBindingId | URL | UUID | O | 削除するACLバインディングID |
 | tokenId | Header | String | O | トークンID |
 
+<a id="15-response"></a>
 #### レスポンス
 
 このAPIはレスポンス本文を返しません。

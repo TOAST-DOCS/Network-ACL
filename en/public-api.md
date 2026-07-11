@@ -1,4 +1,5 @@
-## Network > Network ACL > API v2 Guide
+<a id="network-network-acl-api-v2-guide"></a>
+## Network > Network ACL > API v2 Guide { #network-network-acl-api-v2-guide }
 
 To use the API, API endpoint and token are required. Refer to [API usage preparations](/Compute/Compute/ko/identity-api/) to prepare the information required to use the API.
 
@@ -12,15 +13,16 @@ In each API response, you may find fields that are not specified within this gui
 
 
 <a id="1"></a>
-## Network ACL
+## Network ACL { #1 }
 
 <a id="2"></a>
-### View an ACL List
+### View an ACL List { #2 }
 ```
 GET /v2.0/acls
 X-Auth-Token: {tokenId}
 ```
 
+<a id="2-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -32,6 +34,7 @@ This API does not require a request body.
 | sort_key | Query | String | - | Sorting key of ACL to query<br>Sort in the direction as specified by `sort_dir` |
 | fields | Query | String | - | Field name of ACL to query<br>e.g.) `fields=id&fields=name` |
 
+<a id="2-response"></a>
 #### Response
 
 | Name | Type | Format | Description |
@@ -77,13 +80,14 @@ This API does not require a request body.
 ---
 
 <a id="3"></a>
-### View an ACL
+### View an ACL { #3 }
 
 ```
 GET /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="3-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -94,6 +98,7 @@ This API does not require a request body.
 | aclId | URL | UUID | O | ACL ID to query |
 | fields | Query | String | - | Field name of ACL to query<br>e.g.) `fields=id&fields=name` |
 
+<a id="3-response"></a>
 #### Response
 
 | Name | Type | Format | Description |
@@ -129,13 +134,14 @@ This API does not require a request body.
 ---
 
 <a id="4"></a>
-### Create an ACL
+### Create an ACL { #4 }
  
 ```
 POST /v2.0/acls
 X-Auth-Token: {tokenId}
 ```
 
+<a id="4-request"></a>
 #### Request
 
 | Name | Type | Format | Required | Description |
@@ -162,6 +168,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="4-response"></a>
 #### Response
 
 | Name | Type | Format |  Description |
@@ -197,13 +204,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="5"></a>
-### Delete an ACL
+### Delete an ACL { #5 }
 
 ```
 DELETE /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="5-request"></a>
 #### Request
 
 | Name | Type | Format | Required | Description |
@@ -211,6 +219,7 @@ X-Auth-Token: {tokenId}
 | aclId | URL | UUID | O | ACL ID to delete |
 | tokenId | Header | String | O | Token ID |
 
+<a id="5-response"></a>
 #### Response
 
 This API does not return a response body.
@@ -218,7 +227,7 @@ This API does not return a response body.
 ---
 
 <a id="6"></a>
-### Modify an ACL
+### Modify an ACL { #6 }
 Modifies an existing ACL (only name and description can be edited).
 
 ```
@@ -226,6 +235,7 @@ PUT /v2.0/acls/{aclId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="6-request"></a>
 #### Request
 
 | Name | Type | Format | Required | Description |
@@ -251,6 +261,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="6-response"></a>
 #### Response
 
 | Name | Type | Format |  Description |
@@ -287,13 +298,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="7"></a>
-### View an ACL Rule List
+### View an ACL Rule List { #7 }
  
 ```
 GET /v2.0/acl_rules
 X-Auth-Token: {tokenId}
 ```
 
+<a id="7-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -305,6 +317,7 @@ This API does not require a request body.
 | sort_key | Query | String | - | Sorting key of ACL Rule to query<br>Sort in the direction as specified by `sort_dir` |
 | fields | Query | String | - | Field name of ACL Rule to query<br>e.g.) `fields=id&fields=name` |
 
+<a id="7-response"></a>
 #### Response
 
 | Name | Type | Format |  Description |
@@ -384,13 +397,14 @@ This API does not require a request body.
 ---
 
 <a id="8"></a>
-### View an ACL Rule
+### View an ACL Rule { #8 }
 
 ```
 GET /v2.0/acl_rules/{aclRuleId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="8-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -401,6 +415,7 @@ This API does not require a request body.
 | aclRuleId | URL | UUID | O | ID of ACL Rule to query |
 | fields | Query | String | - | Field name of ACL Rule to query<br>e.g.) `fields=id&fields=name` |
 
+<a id="8-response"></a>
 #### Response
 
 | Name | Type | Format | Description |
@@ -459,13 +474,14 @@ This API does not require a request body.
 ---
 
 <a id="9"></a>
-### Create an ACL Rule
+### Create an ACL Rule { #9 }
 
 ```
 POST /v2.0/acl_rules
 X-Auth-Token: {tokenId}
 ```
 
+<a id="9-request"></a>
 #### Request
 
 | Name | Type | Format |  Required |Description |
@@ -504,6 +520,7 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="9-response"></a>
 #### Response
 
  
@@ -614,6 +631,37 @@ X-Auth-Token: {tokenId}
 </p>
 </details>
 
+<a id="10"></a>
+### Delete an ACL Rule { #10 }
+
+<!-- TODO: translate body -->
+
+<a id="10-1"></a>
+#### Request
+
+<!-- TODO: translate body -->
+
+<a id="10-2"></a>
+#### Response
+
+<!-- TODO: translate body -->
+
+<a id="11"></a>
+### Modify an ACL Rule { #11 }
+
+<!-- TODO: translate body -->
+
+<a id="11-1"></a>
+#### Request
+
+<!-- TODO: translate body -->
+
+<a id="11-2"></a>
+#### Response
+
+<!-- TODO: translate body -->
+
+<!-- pre-align: ko에 대응 섹션 없음 — 검토 필요 (Duplicate Response heading under 'Create an ACL Rule' (t24); no corresponding ko heading — k26 already matched to t26) -->
 #### Response
 
 | Name | Type | Format |  Description |
@@ -672,13 +720,14 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="12"></a>
-### View an ACL Binding List
+### View an ACL Binding List { #12 }
 
 ```
 GET /v2.0/acl_bindings
 X-Auth-Token: {tokenId}
 ```
 
+<a id="12-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -690,6 +739,7 @@ This API does not require a request body.
 | sort_key | Query | String | - | Sorting key of ACL binding to query<br>Sort in the direction as specified by `sort_dir` |
 | fields | Query | String | - | Field name of ACL binding to query<br>e.g.) `fields=id&fields=name` |
 
+<a id="12-response"></a>
 #### Response
 
 | Name | Type | Format |  Description |
@@ -728,13 +778,14 @@ This API does not require a request body.
 ---
 
 <a id="13"></a>
-### View an ACL Binding
+### View an ACL Binding { #13 }
 
 ```
 GET /v2.0/acl_bindings/{aclBindingId}
 X-Auth-Token: {tokenId}
 ```
 
+<a id="13-request"></a>
 #### Request
 
 This API does not require a request body.
@@ -745,6 +796,7 @@ This API does not require a request body.
 | aclBindingId | URL | UUID | O | ID of ACL binding to query |
 | fields | Query | String | - | Field name of ACL binding to query<br>e.g.) `fields=id&fields=name` |
 
+<a id="13-response"></a>
 #### Response
 
 | Name | Type | Format |  Description |
@@ -776,13 +828,14 @@ This API does not require a request body.
 ---
 
 <a id="14"></a> 
-### Create an ACL Binding
+### Create an ACL Binding { #14 }
 
 ```
 POST /v2.0/acl_bindings
 X-Auth-Token: {tokenId}
 ```
 
+<a id="14-request"></a>
 #### Request
 
 | Name | Type | Format |  Required |Description |
@@ -810,6 +863,7 @@ X-Auth-Token: {tokenId}
 </details>
 
 
+<a id="14-response"></a>
 #### Response
 
 | Name | Type | Format |  Description |
@@ -840,7 +894,7 @@ X-Auth-Token: {tokenId}
 ---
 
 <a id="15"></a>
-### Delete an ACL Binding
+### Delete an ACL Binding { #15 }
 
 ```
 DELETE /v2.0/acl_bindings/{aclBindingId}
@@ -848,6 +902,7 @@ X-Auth-Token: {tokenId}
 ```
 
 
+<a id="15-request"></a>
 #### Request
 
 | Name | Type | Format | Required | Description |
@@ -855,6 +910,7 @@ X-Auth-Token: {tokenId}
 | aclBindingId | URL | UUID | O | ID of ACL binding to delete |
 | tokenId | Header | String | O | Token ID |
 
+<a id="15-response"></a>
 #### Response
 
 This API does not return a response body.
