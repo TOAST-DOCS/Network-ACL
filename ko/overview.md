@@ -1,10 +1,13 @@
-## Network > Network ACL > 개요
+<!-- pre-align:aligned sig=a548b48a3fb8 -->
+
+<a id="network-network-acl-overview"></a>
+## Network > Network ACL > 개요 { #network-network-acl-overview }
 
 NHN Cloud는 Network ACL 기능을 제공합니다.
 이를 이용하면 protocol, ip, port 별로 접근 제어가 가능해집니다.
 
 <a id="1"></a>
-## ACL 기능
+## ACL 기능 { #1 }
 
 네트워크로 유입되는 패킷을 제어하려면 ACL 기능을 이용할 수 있습니다.
 이 기능은 [보안 그룹](/Network/Security%20Groups/ko/overview/)과 구분되는 기능으로써 차이점은 다음과 같습니다.
@@ -24,13 +27,13 @@ Network ACL 설정에서 허용되었더라도, 보안 그룹에서 차단될 �
 Network ACL 기능을 이용하려면 다음 사항을 설정해야 합니다.
 
 <a id="2"></a>
-### ACL
+### ACL { #2 }
 * 한 프로젝트에 최대 10개의 ACL을 생성할 수 있습니다.
 * 속성은 이름, 메모입니다.
 
 
 <a id="3"></a>
-### ACL Rule
+### ACL Rule { #3 }
 * 하나의 프로젝트에 최대 100개의 rule을 생성할 수 있습니다.
 * order 번호에 따라서 priority를 가지고 순서대로 적용됩니다. 작은 번호가 높은 priority를 가집니다.
 * '허용(Allow)': 해당 rule과 매칭되는 접근은 <b>허용</b>합니다.
@@ -41,7 +44,7 @@ Network ACL 기능을 이용하려면 다음 사항을 설정해야 합니다.
 
 
 <a id="4"></a>
-### ACL Binding
+### ACL Binding { #4 }
 * 하나의 ACL에 binding 될 수 있는 network의 수는 최대 VPC 개수만큼입니다.
 * 하나의 ACL은 여러 Network에 적용할 수 있습니다.
 * 하나의 Network에는 하나의 ACL을 적용할 수 있습니다.
