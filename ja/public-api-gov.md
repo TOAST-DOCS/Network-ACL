@@ -571,11 +571,6 @@ X-Auth-Token: {tokenId}
 
 #### リクエスト
 
-| 名前 | 種類 | 形式 | 必須 | 説明 |
-|---|---|---|---|---|
-| aclRuleId | URL | UUID | O | 削除するACL Rule ID |
-| tokenId | Header | String | O | トークンID |
-
 #### レスポンス
 
 このAPIはレスポンス本文を返しません。
@@ -593,13 +588,6 @@ X-Auth-Token: {tokenId}
 ```
 
 #### リクエスト
-
-| 名前 | 種類 | 形式 | 必須 | 説明 |
-|---|---|---|---|---|
-| tokenId | Header | String | O | トークンID |
-| aclRuleId | URL | UUID | O | 削除するACL Rule ID |
-| acl\_rule | Body | Array | O | ACL Ruleリストオブジェクト |
-| acl\_rule.description | Body | String | O | ACL Ruleの説明 |
 
 <details><summary>例</summary>
 <p>
@@ -664,22 +652,7 @@ X-Auth-Token: {tokenId}
 
 このAPIはリクエスト本文を要求しません。
 
-| 名前 | 種類 | 形式 | 必須 | 説明 |
-|---|---|---|---|---|
-| tokenId | Header | String | O | トークンID |
-| sort_dir | Query | Enum | - | 照会するACLバインディングのソート方向<br>`sort_key`で指定したフィールドを基準にソート<br>**asc**、**desc**のいずれか |
-| sort_key | Query | String | - | 照会するACLバインディングのソートキー<br>`sort_dir`で指定した方向でソート |
-| fields | Query | String | - | 照会するACLバインディングのフィールド名<br>例) `fields=id&fields=name` |
-
 #### レスポンス
-
-| 名前 | 種類 | 形式 | 説明 |
-|---|---|---|---|
-| acl\_bindings | Body | Array | ACLバインディングリストオブジェクト |
-| acl\_bindings.id | Body | String | ACLバインディングID |
-| acl\_bindings.tenant_id | Body | String | テナントID |
-| acl\_bindings.acl_id | Body | String | NetworkとバインディングされるACL ID |
-| acl\_bindings.network_id | Body | String | ACLとバインディングされるNetwork ID |
 
 
 <details><summary>例</summary>
@@ -720,21 +693,7 @@ X-Auth-Token: {tokenId}
 
 このAPIはリクエスト本文を要求しません。
 
-| 名前 | 種類 | 形式 | 必須 | 説明 |
-|---|---|---|---|---|
-| tokenId | Header | String | O | トークンID |
-| aclBindingId | URL | UUID | O | 照会するACLバインディングID |
-| fields | Query | String | - | 照会するACLバインディングのフィールド名<br>例) `fields=id&fields=name` |
-
 #### レスポンス
-
-| 名前 | 種類 | 形式 | 説明 |
-|---|---|---|---|
-| acl\_binding | Body | Array | ACLバインディングリストオブジェクト |
-| acl\_binding.id | Body | String | ACLバインディングID |
-| acl\_binding.tenant_id | Body | String | テナントID |
-| acl\_binding.acl_id | Body | String | NetworkとバインディングされるACL ID |
-| acl\_binding.network_id | Body | String | ACLとバインディングされるNetwork ID |
 
 
 <details><summary>例</summary>
@@ -766,14 +725,6 @@ X-Auth-Token: {tokenId}
 
 #### リクエスト
 
-| 名前 | 種類 | 形式 | 必須 |説明 |
-|---|---|---|---|---|
-| tokenId | Header | String | O | トークンID |
-| acl\_binding | Body | Array | O | ACLバインディングリストオブジェクト |
-| acl\_binding.tenant_id | Body | String | - | テナントID |
-| acl\_binding.network_id | Body | String | O | Network ID |
-| acl\_binding.acl_id | Body | String | O |ACL ID |
-
 <details><summary>例</summary>
 <p>
 
@@ -792,14 +743,6 @@ X-Auth-Token: {tokenId}
 
 
 #### レスポンス
-
-| 名前 | 種類 | 形式 | 説明 |
-|---|---|---|---|
-| acl\_binding | Body | Array | ACLバインディングリストオブジェクト |
-| acl\_binding.id | Body | String | ACLバインディングID |
-| acl\_binding.tenant_id | Body | String | テナントID |
-| acl\_binding.acl_id | Body | String | NetworkとバインディングされるACL ID |
-| acl\_binding.network_id | Body | String | ACLとバインディングされるNetwork ID |
 
 <details><summary>例</summary>
 <p>
@@ -830,11 +773,6 @@ X-Auth-Token: {tokenId}
 
 
 #### リクエスト
-
-| 名前 | 種類 | 形式 | 必須 | 説明 |
-|---|---|---|---|---|
-| aclBindingId | URL | UUID | O | 削除するACLバインディングID |
-| tokenId | Header | String | O | トークンID |
 
 #### レスポンス
 
