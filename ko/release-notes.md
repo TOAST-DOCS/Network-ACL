@@ -1,3 +1,5 @@
+<!-- pre-align:aligned sig=2b32105a1fdb -->
+
 ## Network > Network ACL > 릴리스 노트
 
 ### 2024. 05. 28.
