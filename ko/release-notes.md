@@ -11,7 +11,7 @@
 
 #### 신규 기능 추가
 
-* 한국(평촌) Public API가 출시되었습니다. [Network ACL API 가이드](https://docs.nhncloud.com/ko/Network/Network%20ACL/ko/public-api/)를 참고해 주시요.
+* 한국(평촌) Public API가 출시되었습니다. [Network ACL API 가이드](https://docs.nhncloud.com/ko/Network/Network%20ACL/ko/public-api/)를 참고하세요.
 
 ### 2020. 08. 25.
 
