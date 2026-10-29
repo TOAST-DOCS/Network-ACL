@@ -3,7 +3,7 @@
 <a id="network-network-acl-api-v2-guide"></a>
 ## Network > Network ACL > API v2 Guide { #network-network-acl-api-v2-guide }
 
-To use the API, API endpoint and token are required. Refer to [API usage preparations](/Compute/Compute/ko/identity-api/) to prepare the information required to use the API.
+NHN Cloud Network services use IaaS tokens for authentication and authorization when making API calls. The IaaS token is an authentication token used for NHN Cloud's OpenStack-based infrastructure services (IaaS). For more information on issuing and using IaaS tokens, please refer to the [IaaS Token](/nhncloud/en/public-api/iaas-token).
 
 For Security Groups API, the `network` type endpoint is used. For more details, see `serviceCatalog` from the response of token issuance.
 
